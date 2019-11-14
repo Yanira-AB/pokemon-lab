@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Data Lovers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lemon&display=swap" rel="stylesheet">
+  <link rel=" stylesheet " href=" https://use.fontawesome.com/releases/v5.5.0/css/all.css ">
+</head>
+
+<body>
+  <div id="root">
+    <main class="page-0">
+      <section class="section-1">
+        <img class="img-section-1" src="img/web-1.jpg" alt="">
+        <div class="link-start" id="link-start-1">POKEMONS</div>
+      </section>
+      <section class="section-2">
+        <img class="img-section-2" src="img/web-2.png" alt="">
+        <div class="link-start" id="link-start-2">POKEDEX</div>
+      </section>
+      <section class="section-3">
+        <img class="img-section-3" src="img/web-3.jpg" alt="">
+        <div class="link-start" id="link-start-3" href="">ATRAPALOS</div>
+      </section>
+      <section class="section-4">
+        <img class="img-section-4" src="img/web-4.jpg" alt="">
+        <div class="link-start" id="link-start-4" href="">CANDYS</div>
+      </section>
+      <section class="logo"><img src="img/web-5.png" alt=""></section>
+    </main>
+    <div id="headers" class="hide">
+      <header class="header-desktop">
+        <section class="menuLogo">
+          <img id="img-logo" src="img/web-5.png" alt="">
+        </section>
+        <section class="menu">
+          <div class="linkMenu1">POKEMONS</div>
+          <div class="linkMenu2">POKEDEX</div>
+          <div class="linkMenu3">ATRAPALOS</div>
+          <div class="linkMenu4">CANDYS</div>
+        </section>
+      </header>
+      <header class="header-movil">
+        <section class="menuLogo-movil">
+          <img id="img-logo-movil" src="img/web-5.png" alt="">
+          <button id="btn-menu-movil" class="btn-menu-movil"><img src="img/menu-movil.png" alt=""></button>
+        </section>
+        <section class="menu-movil hide">
+          <div id="linkMenu1-movil" class="linkMenu1">POKEMONS</div>
+          <div id="linkMenu2-movil" class="linkMenu2">POKEDEX</div>
+          <div id="linkMenu3-movil" class="linkMenu3">ATRAPALOS</div>
+          <div id="linkMenu4-movil" class="linkMenu4">CANDYS</div>
+        </section>
+      </header>
+    </div>
+    <main class="page-1 hide">
+      <section id="sectionOrderFilter">
+        <select id="fieldOrdenar">
+          <option selected value="0"> Elige una opción </option>
+          <option value="1">Ordenar A-Z</option>
+          <option value="2">Ordenar Z-A</option>
+          <option value="3">Ordenar</option>
+        </select>
+        <section id="fieldFind">
+          <input type="search" id="textSearch" placeholder="Buscar pokemon...">
+          <input type="button" id="buttonSearch" class="style_button" value="Buscar">
+        </section>
+      </section>
+      <section class="sectionInitPokemon"></section>
+    </main>
+
+    <main class="page-2 hide">
+      <main id="sectiontFilterType">
+        <section class="sectionFilterType">
+          <div class="column-movil">
+            <ul>
+              <li>NOMBRE</li>
+              <li> Bicho</li>
+              <li>Dragon</li>
+              <li>Hada</li>
+              <li>Fuego</li>
+              <li>Tierra</li>
+              <li>Normal</li>
+              <li>Psíquico</li>
+              <li>Acero</li>
+              <li>Siniestro</li>
+              <li>Eléctrico</li>
+              <li>Lucha</li>
+              <li>Volador</li>
+              <li>Planta</li>
+              <li>Hielo</li>
+              <li>Veneno</li>
+              <li>Fantasma</li>
+              <li>Roca</li>
+              <li>Agua</li>
+            </ul>
+            <ul>
+              <li>T</li>
+              <li><input type="checkbox" name="Bug" value="type"></li>
+              <li><input type="checkbox" name="Dragon" value="type"></li>
+              <li><input type="checkbox" name="Fairy" value="type"></li>
+              <li><input type="checkbox" name="Fire" value="type"></li>
+              <li><input type="checkbox" name="Ground" value="type"></li>
+              <li><input type="checkbox" name="Normal" value="type"></li>
+              <li><input type="checkbox" name="Psychic" value="type"></li>
+              <li><input type="checkbox" name="Steel" value="type"></li>
+              <li><input type="checkbox" name="Dark" value="type"></li>
+              <li><input type="checkbox" name="Electric" value="type"></li>
+              <li><input type="checkbox" name="Fighting" value="type"></li>
+              <li><input type="checkbox" name="Flying" value="type"></li>
+              <li><input type="checkbox" name="Grass" value="type"></li>
+              <li><input type="checkbox" name="Ice" value="type"></li>
+              <li><input type="checkbox" name="Poison" value="type"></li>
+              <li><input type="checkbox" name="Ghost" value="type"></li>
+              <li><input type="checkbox" name="Rock" value="type"></li>
+              <li><input type="checkbox" name="Water" value="type"></li>
+            </ul>
+            <ul>
+              <li>D</li>
+              <li><input type="checkbox" name="Bug" value="weaknesses"></li>
+              <li><input type="checkbox" name="Dragon" value="weaknesses"></li>
+              <li><input type="checkbox" name="Fairy" value="weaknesses"></li>
+              <li><input type="checkbox" name="Fire" value="weaknesses"></li>
+              <li><input type="checkbox" name="Ground" value="weaknesses"></li>
+              <li><input type="checkbox" name="Normal" value="weaknesses"></li>
+              <li><input type="checkbox" name="Psychic" value="weaknesses"></li>
+              <li><input type="checkbox" name="Steel" value="weaknesses"></li>
+              <li><input type="checkbox" name="Dark" value="weaknesses"></li>
+              <li><input type="checkbox" name="Electric" value="weaknesses"></li>
+              <li><input type="checkbox" name="Fighting" value="weaknesses"></li>
+              <li><input type="checkbox" name="Flying" value="weaknesses"></li>
+              <li><input type="checkbox" name="Grass" value="weaknesses"></li>
+              <li><input type="checkbox" name="Ice" value="weaknesses"></li>
+              <li><input type="checkbox" name="Poison" value="weaknesses"></li>
+              <li><input type="checkbox" name="Ghost" value="weaknesses"></li>
+              <li><input type="checkbox" name="Rock" value="weaknesses"></li>
+              <li><input type="checkbox" name="Water" value="weaknesses"></li>
+            </ul>
+          </div>
+          <div class="column1">
+            <ul>
+              <li>NOMBRE</li>
+              <li> Bicho</li>
+              <li>Dragon</li>
+              <li>Hada</li>
+              <li>Fuego</li>
+              <li>Tierra</li>
+              <li>Normal</li>
+            </ul>
+            <ul>
+              <li>T</li>
+              <li><input type="checkbox" name="Bug" value="type"></li>
+              <li><input type="checkbox" name="Dragon" value="type"></li>
+              <li><input type="checkbox" name="Fairy" value="type"></li>
+              <li><input type="checkbox" name="Fire" value="type"></li>
+              <li><input type="checkbox" name="Ground" value="type"></li>
+              <li><input type="checkbox" name="Normal" value="type"></li>
+            </ul>
+            <ul>
+              <li>D</li>
+              <li><input type="checkbox" name="Bug" value="weaknesses"></li>
+              <li><input type="checkbox" name="Dragon" value="weaknesses"></li>
+              <li><input type="checkbox" name="Fairy" value="weaknesses"></li>
+              <li><input type="checkbox" name="Fire" value="weaknesses"></li>
+              <li><input type="checkbox" name="Ground" value="weaknesses"></li>
+              <li><input type="checkbox" name="Normal" value="weaknesses"></li>
+            </ul>
+          </div>
+          <div class="column2">
+            <ul>
+              <li>NOMBRE</li>
+              <li>Psíquico</li>
+              <li>Acero</li>
+              <li>Siniestro</li>
+              <li>Eléctrico</li>
+              <li>Lucha</li>
+              <li>Volador</li>
+            </ul>
+            <ul>
+              <li>T</li>
+              <li><input type="checkbox" name="Psychic" value="type"></li>
+              <li><input type="checkbox" name="Steel" value="type"></li>
+              <li><input type="checkbox" name="Dark" value="type"></li>
+              <li><input type="checkbox" name="Electric" value="type"></li>
+              <li><input type="checkbox" name="Fighting" value="type"></li>
+              <li><input type="checkbox" name="Flying" value="type"></li>
+            </ul>
+            <ul>
+              <li>D</li>
+              <li><input type="checkbox" name="Psychic" value="weaknesses"></li>
+              <li><input type="checkbox" name="Steel" value="weaknesses"></li>
+              <li><input type="checkbox" name="Dark" value="weaknesses"></li>
+              <li><input type="checkbox" name="Electric" value="weaknesses"></li>
+              <li><input type="checkbox" name="Fighting" value="weaknesses"></li>
+              <li><input type="checkbox" name="Flying" value="weaknesses"></li>
+            </ul>
+          </div>
+          <div class="column3">
+            <ul>
+              <li>NOMBRE</li>
+              <li>Planta</li>
+              <li>Hielo</li>
+              <li>Veneno</li>
+              <li>Fantasma</li>
+              <li>Roca</li>
+              <li>Agua</li>
+            </ul>
+            <ul>
+              <li>T</li>
+              <li><input type="checkbox" name="Grass" value="type"></li>
+              <li><input type="checkbox" name="Ice" value="type"></li>
+              <li><input type="checkbox" name="Poison" value="type"></li>
+              <li><input type="checkbox" name="Ghost" value="type"></li>
+              <li><input type="checkbox" name="Rock" value="type"></li>
+              <li><input type="checkbox" name="Water" value="type"></li>
+            </ul>
+            <ul>
+              <li>D</li>
+              <li><input type="checkbox" name="Grass" value="weaknesses"></li>
+              <li><input type="checkbox" name="Ice" value="weaknesses"></li>
+              <li><input type="checkbox" name="Poison" value="weaknesses"></li>
+              <li><input type="checkbox" name="Ghost" value="weaknesses"></li>
+              <li><input type="checkbox" name="Rock" value="weaknesses"></li>
+              <li><input type="checkbox" name="Water" value="weaknesses"></li>
+            </ul>
+          </div>
+        </section>
+        <section class="btn-class">
+          <button id="buttonTypeWeakness" class="style_button-type" style="vertical-align:middle"><span>Buscar
+            </span></button>
+        </section>
+        <section id="sectionFilterTypeWeakness" class="sectionInitPokemon"></section>
+      </main>
+    </main>
+
+    <main class="page-3 hidde">
+      <section id="sectionNumberPokemon">
+        <input type="number" id="inputNumber" placeholder="Top">
+        <input type="button" id="buttonFastPokemon" class="style_button" value="Buscar">
+      </section>
+      <section id="sectionFastPokemon"></section>
+    </main>
+    <main class="page-4 hidde">
+      <section id="sectionOrderFilterCandy">
+      <section id="sectionNumberCandy">
+        <input type="number" id="inputCandy" placeholder="Numero de caramelos...">
+        <input type="button" id="buttonFindCandy" class="style_button" value="Buscar">
+      </section>
+      <select id="fieldOrdenarCandy">
+        <option selected value="0"> Elige una opción </option>
+        <option value="1">Ordenar A-Z</option>
+        <option value="2">Ordenar Z-A</option>
+        <option value="3">Ordenar</option>
+      </select>
+      </section>
+      <section class="sectionCandyPokemon"></section>
+    </main>
+
+    <div id="miModal" class="modal opacity-desactive">
+      <div class="modal-contenido">
+        <a class="closePopup" href="#">X</a>
+        <section class="popupSection1"></section>
+        <section class="popupSection2"></section>
+        <section class="popupSection3"></section>
+      </div>
+    </div>
+
+  </div>
+  <script type="module" src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</body>
+
+</html>
