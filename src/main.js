@@ -4,11 +4,13 @@
 /* eslint-disable import/extensions */
 import POKEMON from './data/pokemon/pokemon.js';
 import {
-  readPokemon, ordenarAZ, ordenarZA, ordenarNumber, searchPokemonByName,
+  ordenarAZ, ordenarZA, ordenarNumber, searchPokemonByName,
   findPokemonByCandy, appearsPokemons, filterType, filterWeak, searchPokemonById,
+  orderByHeight, orderByWeight, orderByEggs,
 } from './data.js';
 
-const listPokemones = readPokemon(POKEMON);
+const listPokemones = POKEMON;
+const colorsTypeWeak = [['Fighting', '#B04508'], ['Grass', '#59EC10'], ['Poison', '#5910EC'], ['Fire', '#EC4510'], ['Ice', '#10DBEC'], ['Flying', '#7A3B0D'], ['Psychic', '#F31190'], ['Water', '#040496'], ['Ground', '#B98D03'], ['Rock', '#777673'], ['Electric', '#F5B902'], ['Normal', '#A6A9A6'], ['Dragon', '#A90904'], ['Fairy', '#FA70CF'], ['Ghost', '#5D0642'], ['Dark', '#090909'], ['Steel', '#626060'], ['Bug', '#156506']];
 let listPaintPokemonCandy = '';
 
 const cleanPopup = () => {
@@ -73,10 +75,24 @@ const paintPopupTypeWeaknes = (pokemon) => {
   weaknesses.textContent = 'Debilidad: ';
   const arrayWeaknesses = pokemon[0].weaknesses;
   arrayType.forEach((element) => {
-    type.textContent += ` ${element}`;
+    const span = document.createElement('span');
+    let i = 0;
+    while (colorsTypeWeak[i].indexOf(element) !== 0) {
+      i += 1;
+    }
+    span.style.color = colorsTypeWeak[i][1];
+    span.textContent += ` ${element}`;
+    type.appendChild(span);
   });
   arrayWeaknesses.forEach((element) => {
-    weaknesses.textContent += ` ${element}`;
+    const span = document.createElement('span');
+    let j = 0;
+    while (colorsTypeWeak[j].indexOf(element) !== 0) {
+      j += 1;
+    }
+    span.style.color = colorsTypeWeak[j][1];
+    span.textContent += ` ${element}`;
+    weaknesses.appendChild(span);
   });
   popupSection2.appendChild(type);
   popupSection2.appendChild(weaknesses);
@@ -249,9 +265,16 @@ document.getElementById('fieldOrdenar').addEventListener('change', (event) => {
     listPaintOfPokemon = ordenarAZ(listPokemones);
   } else if (ordenarValue === '2') {
     listPaintOfPokemon = ordenarZA(listPokemones);
-  } else {
+  } else if (ordenarValue === '3') {
     listPaintOfPokemon = ordenarNumber(listPokemones);
+  } else if (ordenarValue === '4') {
+    listPaintOfPokemon = orderByWeight(listPokemones);
+  } else if (ordenarValue === '5') {
+    listPaintOfPokemon = orderByHeight(listPokemones);
+  } else {
+    listPaintOfPokemon = orderByEggs(listPokemones);
   }
+
   document.querySelector('.sectionInitPokemon').innerHTML = '';
   paintPokemones(listPaintOfPokemon, '.sectionInitPokemon', listPaintOfPokemon.length);
 });

@@ -1,17 +1,49 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
-// eslint-disable-next-line arrow-body-style
-export const readPokemon = (data) => {
-  return data.map((pokemon) => ({
+
+export const arrayMap = (data) => {
+  const arrayCopy = data.map((pokemon) => ({
     id: pokemon.id,
     num: pokemon.num,
     name: pokemon.name,
     img: pokemon.img,
-    candy: pokemon.candy,
-    candy_num: pokemon.candy_count,
-    spawns: pokemon.spawn_chance,
-    time: pokemon.spawn_time,
+    height: parseFloat(pokemon.height.split('m')),
+    weight: parseFloat(pokemon.weight.split('kg')),
+    egg: pokemon.egg,
+    spawn_chance: pokemon.spawn_chance,
+    spawn_time: pokemon.spawn_time,
   }));
+  return arrayCopy;
+};
+
+export const arrayMapEgg = (data) => {
+  const arrayCopy = data.map((pokemon) => ({
+    id: pokemon.id,
+    num: pokemon.num,
+    name: pokemon.name,
+    img: pokemon.img,
+    height: pokemon.height,
+    weight: pokemon.weight,
+    egg: parseInt(pokemon.egg.split('km'), 10),
+  }));
+  return arrayCopy;
+};
+
+export const orderByHeight = (data) => {
+  const dataCopy = arrayMap(data);
+  return dataCopy.sort((a, b) => (a.height - b.height));
+};
+
+export const orderByWeight = (data) => {
+  const dataCopy = arrayMap(data);
+  return dataCopy.sort((a, b) => (a.weight - b.weight));
+};
+
+export const orderByEggs = (data) => {
+  let dataCopy = arrayMap(data);
+  dataCopy = dataCopy.filter((item) => (item.egg !== 'Not in Eggs'));
+  dataCopy = arrayMapEgg(dataCopy);
+  return dataCopy.sort((a, b) => (a.egg - b.egg));
 };
 
 export const ordenarAZ = (data) => {

@@ -61,7 +61,7 @@ número de caramelos que ingreses.
    - Poner T (tipo) y D (debilidad) sobre la fila y que sean checkboxs la forma de selecionar los tipos y debilidades 
    para filtrar los pokemons en la pestaña 'Pokedex'.
 
-  * Prototipo final en Figma.
+  * Prototipo en Figma.
      
-     ![Pokemon](/src/img/final.png "Resultado Final")
+     ![Pokemon](/src/img/figma.png "Figma")
      
